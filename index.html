@@ -396,6 +396,7 @@ ul{margin:0;padding:0;list-style:none}
 .fcell{height:40px;border-radius:11px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:800;color:var(--ink-2);letter-spacing:.03em}
 .fcell.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .fcell.dis{opacity:.38}
+.fcell.all{grid-column:span 4;height:36px;border-radius:10px}
 
 /* payment */
 .paytop{display:flex;align-items:center;gap:11px;margin-top:6px}
@@ -1072,7 +1073,7 @@ function sheetRender(){
     body='<h3 style="font-size:17px;font-weight:800;letter-spacing:-.03em;color:var(--navy);margin-top:4px">결혼 타입으로 찾기</h3>'+
       '<p style="font-size:11.5px;color:var(--muted);margin-top:5px">상대의 4글자 코드를 고르면 그 타입만 보여드려요.</p>'+
       '<div class="filtergrid">'+
-        '<button class="fcell '+(S.filter.code==='ALL'?'on':'')+'" data-act="set-filter-code" data-code="ALL">전체</button>'+
+        '<button class="fcell all '+(S.filter.code==='ALL'?'on':'')+'" data-act="set-filter-code" data-code="ALL">전체 보기</button>'+
         ORDER.map(t=>{
           const n=PROFILES.filter(p=>p.code===t).length;
           return '<button class="fcell '+(n?'':'dis ')+(S.filter.code===t?'on':'')+'" '+(n?'':'disabled')+' data-act="set-filter-code" data-code="'+t+'">'+t+'</button>';
